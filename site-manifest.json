@@ -1,0 +1,76 @@
+{
+  "schema": "CUSTOMER_SITE_MANIFEST/1",
+  "packageVersion": "0.1.0",
+  "generatedOn": "2026-09-28",
+  "customer": {
+    "name": "Barry-Wehmiller Group",
+    "tpid": "1651466",
+    "slug": "barry-wehmiller"
+  },
+  "title": "Barry-Wehmiller Copilot and Sales Agent Activation",
+  "purpose": "Align Barry-Wehmiller and Microsoft on Copilot value activation, Sales Agent readiness, Workshop 1, and the bounded proof decision.",
+  "audience": "Approved Barry-Wehmiller and Microsoft engagement participants",
+  "skin": {
+    "id": "workshop",
+    "name": "Workshop",
+    "registry": "CUSTOMER_HUB_SKIN_REGISTRY/1"
+  },
+  "branding": {
+    "mode": "skin-only",
+    "evidenceTier": "none",
+    "exactTpidResolution": false,
+    "observedCandidatesAllowed": false,
+    "bundledCustomerAssets": false,
+    "brandKit": {
+      "version": "1.0.0",
+      "sha256": "FD9D4471B2CE3FE1A63EF9FEA4F258F46CACFAD91DE982D7808A91D418E388EE",
+      "externalBrandUsageApproved": false
+    },
+    "houseIdentity": {
+      "wordmark": "MCAPS OS | SE OS",
+      "assetPath": "assets/mcaps-se-os-house-mark.svg",
+      "provenancePath": "assets/mcaps-se-os-house-brand.provenance.json",
+      "customerOverlayPrecedence": "customer-brand-overrides-approved-token-roles"
+    }
+  },
+  "generatedFiles": [
+    "index.html",
+    "README.md",
+    "robots.txt",
+    "site-manifest.json",
+    "assets/mcaps-se-os-house-mark.svg",
+    "gate.js"
+  ],
+  "referencedAssets": [
+    "assets/mcaps-se-os-house-mark.svg",
+    "gameplan.html",
+    "gameplan.html#decisions",
+    "gameplan.html#readiness",
+    "gameplan.html#roles",
+    "gameplan.html#scorecard",
+    "gameplan.html#start",
+    "gameplan.html#timing",
+    "gameplan.html#workshop"
+  ],
+  "externalLinks": [],
+  "gate": {
+    "type": "password",
+    "mechanism": "gate.js",
+    "configuration": "configured",
+    "expires": null,
+    "softGate": true
+  },
+  "destination": {
+    "state": "local-draft-only",
+    "public": false,
+    "url": null,
+    "repository": null
+  },
+  "externalEffects": {
+    "uploaded": false,
+    "published": false,
+    "registered": false,
+    "shared": false,
+    "messageSent": false
+  }
+}
