@@ -1,14 +1,14 @@
 {
   "schema": "CUSTOMER_SITE_MANIFEST/1",
-  "packageVersion": "0.1.0",
-  "generatedOn": "2026-09-28",
+  "packageVersion": "0.2.0",
+  "generatedOn": "2026-09-29",
   "customer": {
     "name": "Barry-Wehmiller Group",
     "tpid": "1651466",
     "slug": "barry-wehmiller"
   },
   "title": "Barry-Wehmiller Copilot and Sales Agent Activation",
-  "purpose": "Align Barry-Wehmiller and Microsoft on Copilot value activation, Sales Agent readiness, Workshop 1, and the bounded proof decision.",
+  "purpose": "Provide an owner-led, reusable Sales Agent launch standard with a bounded Barry-Wehmiller profile, scripted validation, pilot gate, and production decision.",
   "audience": "Approved Barry-Wehmiller and Microsoft engagement participants",
   "skin": {
     "id": "workshop",
@@ -29,12 +29,12 @@
     "houseIdentity": {
       "wordmark": "MCAPS OS | SE OS",
       "assetPath": "assets/mcaps-se-os-house-mark.svg",
-      "provenancePath": "assets/mcaps-se-os-house-brand.provenance.json",
       "customerOverlayPrecedence": "customer-brand-overrides-approved-token-roles"
     }
   },
   "generatedFiles": [
     "index.html",
+    "gameplan.html",
     "README.md",
     "robots.txt",
     "site-manifest.json",
@@ -44,15 +44,27 @@
   "referencedAssets": [
     "assets/mcaps-se-os-house-mark.svg",
     "gameplan.html",
-    "gameplan.html#decisions",
-    "gameplan.html#readiness",
+    "gameplan.html#launch",
+    "gameplan.html#profile",
+    "gameplan.html#path",
     "gameplan.html#roles",
     "gameplan.html#scorecard",
-    "gameplan.html#start",
-    "gameplan.html#timing",
-    "gameplan.html#workshop"
+    "gameplan.html#steps",
+    "gameplan.html#validation",
+    "gameplan.html#resources"
   ],
-  "externalLinks": [],
+  "externalLinks": [
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/deploy-sales-app-d365",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/set-up-sales-chat",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/install-sales-app",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/install-sales-as-an-integrated-app",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/install-pin-sales-teams",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/administrator-settings-sales-app",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/access-settings",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/privileges",
+    "https://learn.microsoft.com/en-us/power-platform/admin/configure-relevance-search-organization",
+    "https://learn.microsoft.com/en-us/microsoft-sales-copilot/extend-sales-chat-custom-tools"
+  ],
   "gate": {
     "type": "password",
     "mechanism": "gate.js",
@@ -61,14 +73,14 @@
     "softGate": true
   },
   "destination": {
-    "state": "local-draft-only",
-    "public": false,
-    "url": null,
-    "repository": null
+    "state": "existing-live-site-revision-pending",
+    "public": true,
+    "url": "https://billwhalenmsft.github.io/barry-wehmiller-copilot-sales-hub/",
+    "repository": "https://github.com/billwhalenmsft/barry-wehmiller-copilot-sales-hub"
   },
   "externalEffects": {
-    "uploaded": false,
-    "published": false,
+    "uploaded": true,
+    "published": true,
     "registered": false,
     "shared": false,
     "messageSent": false

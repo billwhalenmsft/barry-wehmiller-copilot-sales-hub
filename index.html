@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>Barry-Wehmiller Copilot and Sales Agent Activation</title>
+  <link rel="icon" href="assets/mcaps-se-os-house-mark.svg" type="image/svg+xml">
   <script>
     (() => {
       const param = new URLSearchParams(window.location.search).get("scoutTheme");
-      const theme = param === "dark" ? "dark" : "light";
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
@@ -219,17 +221,46 @@
     .brand-wordmark { white-space: nowrap; }
     .brand-separator { color: var(--cp-text-soft); font-weight: 600; }
     .brand-customer, .brand-microsoft { color: var(--cp-text); white-space: nowrap; }
-    .section-nav { display: flex; gap: 18px; overflow-x: auto; }
-    .section-nav a {
-      padding: 20px 0 17px;
-      border-bottom: 3px solid transparent;
-      color: var(--cp-text-muted);
+    .section-menu { position: relative; flex: none; margin: 0; }
+    .section-menu summary {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 0.625rem;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+    .section-menu summary::-webkit-details-marker { display: none; }
+    .section-menu summary::after { content: "+"; color: var(--cp-accent); font-size: 18px; line-height: 1; }
+    .section-menu[open] summary::after { content: "-"; }
+    .section-menu nav {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: min(310px, calc(100vw - 32px));
+      padding: 8px;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      background: var(--cp-surface);
+      box-shadow: var(--cp-shadow);
+    }
+    .section-menu nav a {
+      display: block;
+      min-height: 42px;
+      padding: 10px 12px;
+      border-radius: 0.625rem;
+      color: var(--cp-text);
       font-size: 14px;
       font-weight: 700;
       text-decoration: none;
-      white-space: nowrap;
     }
-    .section-nav a:hover { border-bottom-color: var(--cp-link); color: var(--cp-link); }
+    .section-menu nav a:hover { background: var(--cp-accent-soft); color: var(--cp-link); }
 
     .hero {
       position: relative;
@@ -377,7 +408,6 @@
       .header-inner { min-height: 56px; }
       .brand-line { gap: 8px; font-size: 14px; }
       .house-mark { width: 30px; height: 30px; }
-      .section-nav { display: none; }
       .hero,
       html[data-skin="executive"] .hero,
       html[data-skin="workshop"] .hero,
@@ -395,6 +425,13 @@
       html[data-skin="workshop"] .resource-card { padding-left: 46px; }
       .resource-body { min-height: 0; }
       .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+      .brand-customer { max-width: 145px; overflow: hidden; text-overflow: ellipsis; }
+      .brand-microsoft, .brand-separator, .brand-wordmark { display: none; }
+      .section-menu summary { padding-inline: 11px; }
+      .section-menu summary span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+      .section-menu summary::before { content: "Guide"; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -424,11 +461,17 @@
           <span class="brand-wordmark">MCAPS OS | SE OS</span>
         </span>
       </div>
-      <nav class="section-nav" aria-label="Page sections">
-        <a href="#working-set">Move forward before the custom build is complete</a>
-        <a href="#technical-delivery">Keep the first proof bounded and testable</a>
-        <a href="#follow-through">Lock owners, timing, and the next decision</a>
-      </nav>
+      <details class="section-menu">
+        <summary><span>Guide sections</span></summary>
+        <nav aria-label="Guide sections">
+          <a href="gameplan.html#profile">Customer launch profile</a>
+          <a href="gameplan.html#path">Five-day target</a>
+          <a href="gameplan.html#steps">Eight execution steps</a>
+          <a href="gameplan.html#validation">Validation script</a>
+          <a href="gameplan.html#scorecard">Pilot scorecard</a>
+          <a href="gameplan.html#launch">Production decision</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -436,16 +479,16 @@
     <section class="hero" aria-labelledby="hub-title">
       <div class="wrap hero-inner">
         <p class="eyebrow">Activation resource center</p>
-        <h1 id="hub-title">Start with one grounded, read-only seller scenario.</h1>
-        <p class="hero-summary">A reviewed game plan for preparing the environment, running the first workshop, measuring a native Sales Agent proof, and deciding the next step.</p>
+        <h1 id="hub-title">Get to a measured Sales Agent pilot with one clear runbook.</h1>
+        <p class="hero-summary">An owner-led, five-business-day target to install, connect, configure, validate, and pilot native Sales Agent before considering any extension.</p>
         <div class="hero-meta" aria-label="Resource center details">
           <span class="meta-item">Prepared for Barry-Wehmiller Group</span>
           <span class="meta-item">Approved Barry-Wehmiller and Microsoft engagement participants</span>
-          <span class="meta-item">Updated 2026-09-28</span>
+          <span class="meta-item">Updated 2026-09-29</span>
         </div>
         <div class="hero-actions">
-          <a class="button button-primary" href="gameplan.html">Open the activation game plan</a>
-          <a class="button button-secondary" href="#working-set">Review the working set</a>
+          <a class="button button-primary" href="gameplan.html">Open the turnkey launch guide</a>
+          <a class="button button-secondary" href="gameplan.html#step-1">Start with Step 1</a>
         </div>
       </div>
     </section>
@@ -455,9 +498,9 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Start here</p>
-            <h2 id="working-set-title">Move forward before the custom build is complete</h2>
+            <h2 id="working-set-title">Lock the scope before configuration starts</h2>
           </div>
-          <p class="section-summary">Use the accepted game plan to confirm readiness, owners, and the first evidence-producing workshop.</p>
+          <p class="section-summary">Complete the bounded customer profile, assign every owner, and use the five-day target to reach pilot readiness without guessing.</p>
         </div>
         <div class="resource-grid">
         <article class="resource-card">
@@ -467,9 +510,9 @@
               <span class="chip">Game plan</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Activation game plan</h3>
-            <p class="resource-description">Review the scenario, ownership, proposed timing, readiness checklist, scorecard, and decisions.</p>
-            <a class="resource-link" href="gameplan.html">Open game plan</a>
+            <h3>Turnkey launch guide</h3>
+            <p class="resource-description">Run the eight-step sequence from owner assignment through the production decision.</p>
+            <a class="resource-link" href="gameplan.html">Open the guide</a>
           </div>
         </article>
         <article class="resource-card">
@@ -479,9 +522,9 @@
               <span class="chip">Checklist</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Environment readiness</h3>
-            <p class="resource-description">Confirm Sales Agent setup, Dynamics access, approved records, permissions, and the no-write boundary.</p>
-            <a class="resource-link" href="gameplan.html#readiness">Review readiness</a>
+            <h3>Customer launch profile</h3>
+            <p class="resource-description">Confirm the exact environment, pilot users, accountable owners, scenario, and read-only boundary.</p>
+            <a class="resource-link" href="gameplan.html#profile">Confirm the profile</a>
           </div>
         </article>
         <article class="resource-card">
@@ -491,9 +534,9 @@
               <span class="chip">Workshop</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Workshop 1</h3>
-            <p class="resource-description">Use the agenda and expected outputs to establish the native readiness and known-answer proof.</p>
-            <a class="resource-link" href="gameplan.html#workshop">Review workshop</a>
+            <h3>Five-day fast path</h3>
+            <p class="resource-description">Use five control points to move from scope through access, configuration, validation, and pilot.</p>
+            <a class="resource-link" href="gameplan.html#path">Review the path</a>
           </div>
         </article>
         </div>
@@ -504,44 +547,44 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Technical delivery set</p>
-            <h2 id="technical-delivery-title">Keep the first proof bounded and testable</h2>
+            <h2 id="technical-delivery-title">Configure the minimum safe native path</h2>
           </div>
-          <p class="section-summary">The current proof is native-first and read-only. Production design, write actions, account-specific licensing, and extension work remain deferred decisions.</p>
+          <p class="section-summary">The first proof stays native-first, least-privileged, and read-only. Every step names its owner, output, evidence, completion gate, and recovery path.</p>
         </div>
         <div class="resource-grid">
         <article class="resource-card">
           
           <div class="resource-body">
             <div class="resource-type">
-              <span class="chip">Technical details</span>
+              <span class="chip">Setup</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Technical details</h3>
-            <p class="resource-description">Review the preparation tasks, sample-record approach, known-answer set, and zero-write controls.</p>
-            <a class="resource-link" href="gameplan.html#start">Open technical details</a>
+            <h3>Eight execution steps</h3>
+            <p class="resource-description">Install the app, connect Dynamics 365, initialize Sales Chat, and configure the minimum data boundary.</p>
+            <a class="resource-link" href="gameplan.html#steps">Run the steps</a>
           </div>
         </article>
         <article class="resource-card">
           
           <div class="resource-body">
             <div class="resource-type">
-              <span class="chip">Architecture</span>
+              <span class="chip">Validation</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Architecture and data boundary</h3>
-            <p class="resource-description">Confirm the environment, connection, approved tables and fields, privileges, search, and least-privilege boundary.</p>
-            <a class="resource-link" href="gameplan.html#readiness">Review the boundary</a>
+            <h3>Scripted validation</h3>
+            <p class="resource-description">Run twelve known-answer, paraphrase, missing-data, conflict, permission, and no-write cases.</p>
+            <a class="resource-link" href="gameplan.html#validation">Open the test script</a>
           </div>
         </article>
         <article class="resource-card">
           
           <div class="resource-body">
             <div class="resource-type">
-              <span class="chip">Solution design</span>
+              <span class="chip">Scorecard</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Solution design and proof gate</h3>
-            <p class="resource-description">Use the seven-measure scorecard to decide whether to stop, iterate native setup, evaluate an extension, or approve a pilot.</p>
+            <h3>Pre-pilot and pilot gate</h3>
+            <p class="resource-description">Measure grounding, correctness, access, zero writes, safe failure, usefulness, unassisted completion, time benefit, and critical pilot safety.</p>
             <a class="resource-link" href="gameplan.html#scorecard">Review the proof gate</a>
           </div>
         </article>
@@ -553,9 +596,9 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">Follow-through</p>
-            <h2 id="follow-through-title">Lock owners, timing, and the next decision</h2>
+            <h2 id="follow-through-title">Pilot, decide, and operate with evidence</h2>
           </div>
-          <p class="section-summary">The proposed sequence becomes an active plan only after the customer and account team confirm the owners, environment, records, and checkpoint.</p>
+          <p class="section-summary">A completed pilot is not production approval. Use the evidence to stop, repair native setup, evaluate an extension, or plan production.</p>
         </div>
         <div class="resource-grid">
         <article class="resource-card">
@@ -566,7 +609,7 @@
               <span class="chip chip-format">HTML</span>
             </div>
             <h3>Role-based ownership</h3>
-            <p class="resource-description">See the customer and Microsoft roles needed to prepare, run, score, and govern the proof.</p>
+            <p class="resource-description">Name the six people accountable for business acceptance, deployment, security, validation, and follow-through.</p>
             <a class="resource-link" href="gameplan.html#roles">Review owners</a>
           </div>
         </article>
@@ -574,24 +617,24 @@
           
           <div class="resource-body">
             <div class="resource-type">
-              <span class="chip">Timeline</span>
+              <span class="chip">Decision</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Proposed timing</h3>
-            <p class="resource-description">Review the six checkpoints from kickoff through the evidence-backed expansion decision.</p>
-            <a class="resource-link" href="gameplan.html#timing">Review timing</a>
+            <h3>Production decision</h3>
+            <p class="resource-description">Choose one next move and confirm support, monitoring, training, change control, governance, and rollback.</p>
+            <a class="resource-link" href="gameplan.html#launch">Make the decision</a>
           </div>
         </article>
         <article class="resource-card">
           
           <div class="resource-body">
             <div class="resource-type">
-              <span class="chip">Decision guide</span>
+              <span class="chip">References</span>
               <span class="chip chip-format">HTML</span>
             </div>
-            <h3>Decisions and next steps</h3>
-            <p class="resource-description">Confirm the six decisions that the kickoff must close before prompt execution begins.</p>
-            <a class="resource-link" href="gameplan.html#decisions">Review decisions</a>
+            <h3>Microsoft product guidance</h3>
+            <p class="resource-description">Use current Microsoft Learn guidance for deployment, setup, access, roles, and optional extension details.</p>
+            <a class="resource-link" href="gameplan.html#resources">Review sources</a>
           </div>
         </article>
         </div>
@@ -601,9 +644,23 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>Barry-Wehmiller Group + Microsoft. Proposed planning windows; no production deployment or account-specific cost conclusion is represented.</span>
+      <span>Barry-Wehmiller Group + Microsoft. Proposed pilot guide; no production deployment, customer acceptance, or account-specific cost conclusion is represented.</span>
       <span>Workshop skin</span>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll(".section-menu").forEach((menu) => {
+      const summary = menu.querySelector("summary");
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => menu.removeAttribute("open"));
+      });
+      menu.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && menu.open) {
+          menu.removeAttribute("open");
+          summary.focus();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
